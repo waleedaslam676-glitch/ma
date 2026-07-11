@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AI Auto Tasker Desktop</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="sidebar">
+    <div class="brand">
+      <div class="brand-dot"></div>
+      <div>
+        <div class="brand-title">AI Auto Tasker</div>
+        <div class="brand-sub">Desktop &middot; YouTube Automation</div>
+      </div>
+    </div>
+
+    <div class="navrow">
+      <button class="navbtn" id="btn-back">&larr;</button>
+      <button class="navbtn" id="btn-forward">&rarr;</button>
+      <button class="navbtn" id="btn-reload">&#8635;</button>
+      <button class="navbtn" id="btn-home">Home</button>
+    </div>
+    <div class="url-pill" id="url-pill">youtube.com</div>
+
+    <div class="section-label">Script</div>
+    <textarea id="script-input" spellcheck="false">subscribe_channel_video "MrBeast" "I Survived"
+subscribe_channel_video "PewDiePie" "Minecraft"
+subscribe_channel_video "Marques Brownlee" "Review"
+
+# Upar jaisi line copy karke neeche jitne chaho utne channel add karo:
+# subscribe_channel_video "Channel Naam" "Video Title Jo Search Karna Hai"
+# Agar video title exact match na mile to woh channel ka pehla video khul jayega.</textarea>
+
+    <div class="btn-row">
+      <button id="btn-run" class="primary-btn">▶ Run Script</button>
+      <button id="btn-stop" class="secondary-btn">Stop</button>
+    </div>
+
+    <div class="section-label">Console</div>
+    <div id="log-console"></div>
+
+    <details class="help">
+      <summary>Command reference</summary>
+      <pre>open_url &lt;url&gt;
+goto_home
+wait &lt;ms&gt;
+subscribe_collaborators      # on current video: open "and X more"
+                             # panel, subscribe every channel in it
+subscribe_channel_video "channel" "video title"
+                             # search channel, open it, open matching
+                             # video, play it, subscribe, bell -&gt; All
+subscribe_channel "name"     # same, but plays channel's first video
+search_channel "name"
+find_video "title fragment"
+subscribe
+click_bell
+click "css selector"
+click_text "visible text"
+type "selector" "text"
+scroll &lt;amount&gt;
+log "message"
+# comment lines start with #</pre>
+    </details>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>

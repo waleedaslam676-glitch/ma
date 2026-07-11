@@ -1,0 +1,35 @@
+{
+  "name": "ai-auto-tasker-desktop",
+  "version": "1.0.0",
+  "description": "AI Auto Tasker Desktop - embedded browser YouTube automation via custom scripting",
+  "main": "main.js",
+  "author": "Waleed",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "build-win": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^30.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.waleed.aiautotaskerdesktop",
+    "productName": "AI Auto Tasker Desktop",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "styles.css",
+      "renderer.js"
+    ],
+    "win": {
+      "target": [
+        { "target": "portable", "arch": ["x64"] }
+      ]
+    }
+  }
+}
